@@ -19,6 +19,7 @@
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="1IT-AL-Ryd" appends="YES" id="kNF-VO-Sqd"/>
+                            <outletCollection property="gestureRecognizers" destination="td9-cX-cXu" appends="YES" id="mc0-Oi-i7o"/>
                         </connections>
                     </view>
                 </viewController>
@@ -29,6 +30,12 @@
                         <outlet property="delegate" destination="BV1-FR-VrT" id="2Yj-kR-6H0"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="td9-cX-cXu">
+                    <connections>
+                        <action selector="didPan:" destination="BV1-FR-VrT" id="aiO-vr-roy"/>
+                        <outlet property="delegate" destination="BV1-FR-VrT" id="8Mx-XD-geL"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
         </scene>
     </scenes>
