@@ -166,6 +166,21 @@ class Tetris {
         return (removedLines, fallenBlocks)
     }
     
+    func removeAllBlocks() -> Array<Array<Block>> {
+        var allBlocks = Array<Array<Block>>()
+        for row in 0..<NumRows {
+            var rowOfBlocks = Array<Block>()
+            for column in 0..<NumColumns {
+                if let block = blockArray[column, row] {
+                    rowOfBlocks.append(block)
+                    blockArray[column, row] = nil
+                }
+            }
+            allBlocks.append(rowOfBlocks)
+        }
+        return allBlocks
+    }
+    
     func dropShape() {
         if let shape = fallingShape {
             while detectIllegalPlacement() == false {
