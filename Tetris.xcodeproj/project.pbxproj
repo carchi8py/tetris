@@ -32,6 +32,7 @@
 		274A3DCD1B22985200D8584E /* JShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274A3DCC1B22985200D8584E /* JShape.swift */; };
 		274A3DCF1B22986D00D8584E /* SShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274A3DCE1B22986D00D8584E /* SShape.swift */; };
 		274A3DD11B22989300D8584E /* ZShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274A3DD01B22989300D8584E /* ZShape.swift */; };
+		274A3DD51B22A65B00D8584E /* Tetris.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274A3DD41B22A65B00D8584E /* Tetris.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		274A3DCC1B22985200D8584E /* JShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JShape.swift; sourceTree = "<group>"; };
 		274A3DCE1B22986D00D8584E /* SShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SShape.swift; sourceTree = "<group>"; };
 		274A3DD01B22989300D8584E /* ZShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZShape.swift; sourceTree = "<group>"; };
+		274A3DD41B22A65B00D8584E /* Tetris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tetris.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				274A3DBD1B228D6F00D8584E /* Block.swift */,
 				274A3DBF1B22908000D8584E /* Shape.swift */,
 				274A3DC11B2296AA00D8584E /* Shapes */,
+				274A3DD41B22A65B00D8584E /* Tetris.swift */,
 			);
 			path = Tetris;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			files = (
 				274A3DCB1B22983C00D8584E /* LShape.swift in Sources */,
 				274A3DC31B2296C400D8584E /* SquareShape.swift in Sources */,
+				274A3DD51B22A65B00D8584E /* Tetris.swift in Sources */,
 				274A3D8C1B2280F800D8584E /* GameScene.swift in Sources */,
 				274A3DCD1B22985200D8584E /* JShape.swift in Sources */,
 				274A3DC01B22908000D8584E /* Shape.swift in Sources */,
