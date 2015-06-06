@@ -24,6 +24,7 @@
 		274A3DBA1B22826800D8584E /* whitebg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 274A3DB41B22826800D8584E /* whitebg@2x.png */; };
 		274A3DBC1B228A0A00D8584E /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274A3DBB1B228A0A00D8584E /* Array2D.swift */; };
 		274A3DBE1B228D6F00D8584E /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274A3DBD1B228D6F00D8584E /* Block.swift */; };
+		274A3DC01B22908000D8584E /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274A3DBF1B22908000D8584E /* Shape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		274A3DB41B22826800D8584E /* whitebg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whitebg@2x.png"; sourceTree = "<group>"; };
 		274A3DBB1B228A0A00D8584E /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		274A3DBD1B228D6F00D8584E /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		274A3DBF1B22908000D8584E /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				274A3D851B2280F800D8584E /* Supporting Files */,
 				274A3DBB1B228A0A00D8584E /* Array2D.swift */,
 				274A3DBD1B228D6F00D8584E /* Block.swift */,
+				274A3DBF1B22908000D8584E /* Shape.swift */,
 			);
 			path = Tetris;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				274A3D8C1B2280F800D8584E /* GameScene.swift in Sources */,
+				274A3DC01B22908000D8584E /* Shape.swift in Sources */,
 				274A3DBC1B228A0A00D8584E /* Array2D.swift in Sources */,
 				274A3DBE1B228D6F00D8584E /* Block.swift in Sources */,
 				274A3D8E1B2280F800D8584E /* GameViewController.swift in Sources */,
