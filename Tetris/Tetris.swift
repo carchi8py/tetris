@@ -15,6 +15,9 @@ let StartingRow = 0
 let PreviewColumn = 12
 let PreviewRow = 1
 
+let pointsPerLine = 10
+let LevelThreshold = 1000
+
 protocol TetrisDelegate {
     // Invoked with the current round ends
     func gameDidEnd(tetris: Tetris)
@@ -41,7 +44,12 @@ class Tetris {
     var fallingShape:Shape?
     var delegate:TetrisDelegate?
     
+    var score:Int
+    var level:Int
+    
     init() {
+        score = 0
+        level = 1
         fallingShape = nil
         nextShape = nil
         blockArray = Array2D<Block>(columns: NumColumns, rows: NumRows)
@@ -106,7 +114,56 @@ class Tetris {
     }
     
     func endGame() {
+        score = 0
+        level = 1
         delegate?.gameDidEnd(self)
+    }
+    
+    func removeCompletedLines() -> (linesRemoved: Array<Array<Block>>, fallenBlocks: Array<Array<Block>>) {
+        var removedLines = Array<Array<Block>>()
+        for var row = NumRows - 1; row > 0; row-- {
+            var rowOfBlocks = Array<Block>()
+            for column in 0..<NumColumns {
+                if let block = blockArray[column, row] {
+                    rowOfBlocks.append(block)
+                }
+            }
+            if rowOfBlocks.count == NumColumns {
+                removedLines.append(rowOfBlocks)
+                for block in rowOfBlocks {
+                    blockArray[block.column, block.row] = nil
+                }
+            }
+        }
+        if removedLines.count == 0 {
+            return([],[])
+        }
+        let pointsEarned = removedLines.count * PointsPerLine * level
+        score += pointsEarned
+        if score >= level * LevelThreshold {
+            level += 1
+            delegate?.gameDidLevelUp(self)
+        }
+        var fallenBlocks = Array<Array<Block>>()
+        for column in 0..<NumColumns {
+            var fallenBlocksArray = Array<Block>()
+            for var row = removedLines[0][0].row - 1; row > 0; row-- {
+                if let block = blockArray[column, row] {
+                    var newRow = row
+                    while (newRow < NumRows - 1 && blockArray[column, newRow + 1] == nil) {
+                        newRow++
+                    }
+                    block.row = newRow
+                    blockArray[column, row] = nil
+                    blockArray[column, newRow] = block
+                    fallenBlocksArray.append(block)
+                }
+            }
+            if fallenBlocksArray.count > 0 {
+                fallenBlocks.append(fallenBlocksArray)
+            }
+        }
+        return (removedLines, fallenBlocks)
     }
     
     func dropShape() {
